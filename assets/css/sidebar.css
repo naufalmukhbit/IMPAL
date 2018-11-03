@@ -32,6 +32,15 @@ a:hover {
 	color: #ffffff;
 	text-decoration: none;
 }
+li {
+	margin: auto;
+	padding-left: 1rem;
+	padding-top: .7rem;
+	padding-bottom: .7rem;
+}
+li:hover {
+	background-color: #803b3b;
+}
 .active {
 	background-color: #5d2b2b;
 }
@@ -42,16 +51,13 @@ img {
 	text-align: center;
 	padding: 3rem 0 3rem 0;
 }
-li {
-	margin: auto;
-	padding-left: 1rem;
-	padding-top: .7rem;
-	padding-bottom: .7rem;
-}
+
 .fa {
 	font-size: 36px;
-	margin-right: 2rem;
 }
 .acc {
 	color: blue;
+}
+.header-row {
+	width: 100%;
 }

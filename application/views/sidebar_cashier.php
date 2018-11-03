@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Manager's Homepage</title>
+	<title>Cashier's Homepage</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/css/sidebar.css">
@@ -41,46 +41,13 @@
 							<a href="#">Home</a>
 						</li>
 						<li>
-							<a href="#empSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Employees</a>
-							<ul class="collapse list-unstyled" id="empSubmenu">
-								<li>
-									<a href="#">Opt 1</a>
-								</li>
-								<li>
-									<a href="#">Opt 2</a>
-								</li>
-								<li>
-									<a href="#">Opt 3</a>
-								</li>
-							</ul>
+							<a href="#">New Transaction</a>
 						</li>
 						<li>
-							<a href="#repSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Reports</a>
-							<ul class="collapse list-unstyled" id="repSubmenu">
-								<li>
-									<a href="#">Page 1</a>
-								</li>
-								<li>
-									<a href="#">Page 2</a>
-								</li>
-								<li>
-									<a href="#">Page 3</a>
-								</li>
-							</ul>
+							<a href="#">Transactions List</a>
 						</li>
 						<li>
-							<a href="#stkSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Stocks Management</a>
-							<ul class="collapse list-unstyled" id="stkSubmenu">
-								<li>
-									<a href="#">Page 1</a>
-								</li>
-								<li>
-									<a href="#">Page 2</a>
-								</li>
-								<li>
-									<a href="#">Page 3</a>
-								</li>
-							</ul>
+							<a href="#">Send Report</a>
 						</li>
 					</ul>
 				</nav>

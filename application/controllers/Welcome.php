@@ -10,6 +10,6 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('welcome_screen');
+		$this->load->view('sidebar_stocks');
 	}
 }
