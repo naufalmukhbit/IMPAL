@@ -1,0 +1,57 @@
+.sidebar-col-2 {
+	color: white;
+	padding-left: 0;
+	padding-right: 0;
+}
+.sidebar-col-10 {
+	padding: 0;
+}
+.header {
+	color: white;
+	background-color: #a44444;
+	padding: 1rem 0 1.5rem 2rem;
+}
+.emp-name {
+	font-size: 30px;
+}
+#sidebar {
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    background: #773333;
+    color: #fff;
+    transition: all 0.3s;
+}
+a {
+	color: #ffffff;
+}
+a:hover {
+	color: #ffffff;
+	text-decoration: none;
+}
+.active {
+	background-color: #5d2b2b;
+}
+img {
+	width: 60%;
+}
+.sidebar-header {
+	text-align: center;
+	padding: 3rem 0 3rem 0;
+}
+li {
+	margin: auto;
+	padding-left: 1rem;
+	padding-top: .7rem;
+	padding-bottom: .7rem;
+}
+.fa {
+	font-size: 36px;
+	margin-right: 2rem;
+}
+.acc {
+	color: blue;
+}
