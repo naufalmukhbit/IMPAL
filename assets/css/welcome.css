@@ -1,0 +1,46 @@
+body {
+	font-family: SF-UI-Display;
+	text-align: center;
+	background: linear-gradient(180deg, #de9a9f 60%, #FFFFFF 40%);
+}
+.content {
+	height: 87vh;
+	width: 90vh;
+	position: relative;
+	padding-top: 27vh;
+	margin: auto;
+	margin-bottom: 13vh;
+	border-radius: 40px;
+}
+h1 {
+	font-size: 96pt;
+	font-weight: bold;
+}
+h2 {
+	font-size: 20pt;
+	font-weight: bold;
+}
+.welcome_sign {
+	vertical-align: middle;
+	text-align: center;
+	color: white;
+}
+.buttons {
+	display: inline-block;
+	font-weight: bold;
+}
+a:hover {
+	text-decoration: none;
+}
+.btn {
+	font-size: 16pt;
+	background-color: white;
+	font-weight: bold;
+	border: solid 3px black;
+	color: black;
+	border-radius: 60px;
+}
+.btn:hover {
+	color: black;
+	background-color: lightgrey;
+}

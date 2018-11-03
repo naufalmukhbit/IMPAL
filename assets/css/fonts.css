@@ -1,0 +1,20 @@
+@font-face {
+	font-family: SF-UI-Display;
+	font-weight: bolder;
+	src: url("../fonts/SF-UI-Display/SF-UI-Display-Black.ttf");
+}
+@font-face {
+	font-family: SF-UI-Display;
+	font-weight: bold;
+	src: url("../fonts/SF-UI-Display/SF-UI-Display-Bold.ttf");
+}
+@font-face {
+	font-family: SF-UI-Display;
+	font-weight: lighter;
+	src: url("../fonts/SF-UI-Display/SF-UI-Display-Light.ttf");
+}
+@font-face {
+	font-family: SF-UI-Display;
+	font-weight: normal;
+	src: url("../fonts/SF-UI-Display/SF-UI-Display-Regular.ttf");
+}
