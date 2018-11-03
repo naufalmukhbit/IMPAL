@@ -1,3 +1,7 @@
+```
+This code is made with CodeIgniter framework. To run this, put the files in your xampp/htdocs directory.
+```
+
 # Sistem Informasi Showroom Mobil
 
 Sistem Showroom Mobil yang kami buat merupakan suatu sistem yang berfungsi untuk membantu pegawai dan manajer dalam kegiatan pengelolaan dan pelaporan dengan tujuan untuk membuat proses pendataan pegawai, mobil, dan transaksi yang di lakukan di showroom menjadi lebih efektif dan dapat di pantau dengan mudah oleh manager. Perangkat lunak ini berkaitan dengan beberapa entitas, yaitu: pegawai, manager, dan administrator. Adapun ruang lingkup proses yang dibahas dalam sistem showroom ini adalah sebagai berikut:
