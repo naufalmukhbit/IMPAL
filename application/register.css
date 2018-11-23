@@ -1,0 +1,35 @@
+body{
+}
+.bg {
+	background-color: #CBACAC;
+	height: 50vh;
+}
+.container{
+	padding-top: 0%;
+	width: 50%;
+	position: center;
+}
+.teks{
+	font-size: 20px;
+	text-align: center;
+	padding: 10px;
+}
+.form-box{
+	background-color: #FFF;
+	border-radius: 4px;
+	box-shadow: 2px 2px 6px grey;
+	padding: 10px 40px 10px 40px;
+}
+.form-group input{
+	border-radius: 30px;
+}
+.btn{
+	margin-top: 30px;
+	border-radius: 4px;
+	background-color: #6495ED;
+	border: 0;
+	color: white;
+}
+.btn:hover:enabled {
+	background-color: #5F9EA0;
+}
