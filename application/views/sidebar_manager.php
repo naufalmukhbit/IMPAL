@@ -4,7 +4,7 @@
 	<title>Manager's Homepage</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/css/sidebar.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/sidebar.css">
 	<!-- Scrollbar Custom CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -37,47 +37,47 @@
 					</div>
 
 					<ul class="list-unstyled components">
-						<li class="active">
+						<li class="active side">
 							<a href="#">Home</a>
 						</li>
-						<li>
+						<li class="side">
 							<a href="#empSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Employees</a>
 							<ul class="collapse list-unstyled" id="empSubmenu">
-								<li>
-									<a href="#">Opt 1</a>
+								<li class="side">
+									<a href="<?php echo site_url('Manager/manage_employee'); ?>">Manage Employees</a>
 								</li>
-								<li>
+								<li class="side">
 									<a href="#">Opt 2</a>
 								</li>
-								<li>
+								<li class="side">
 									<a href="#">Opt 3</a>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li class="side">
 							<a href="#repSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Reports</a>
 							<ul class="collapse list-unstyled" id="repSubmenu">
-								<li>
+								<li class="side">
 									<a href="#">Page 1</a>
 								</li>
-								<li>
+								<li class="side">
 									<a href="#">Page 2</a>
 								</li>
-								<li>
+								<li class="side">
 									<a href="#">Page 3</a>
 								</li>
 							</ul>
 						</li>
-						<li>
+						<li class="side">
 							<a href="#stkSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Stocks Management</a>
 							<ul class="collapse list-unstyled" id="stkSubmenu">
-								<li>
+								<li class="side">
 									<a href="#">Page 1</a>
 								</li>
-								<li>
+								<li class="side">
 									<a href="#">Page 2</a>
 								</li>
-								<li>
+								<li class="side">
 									<a href="#">Page 3</a>
 								</li>
 							</ul>
@@ -95,7 +95,7 @@
 						</div>
 						<div class="col-2 pl-5 pr-0 my-auto">
 							<a href="#" class="mr-4"><i class="fa fa-cog"></i></a>
-							<a href="#"><i class="fa fa-sign-out-alt"></i></a>
+							<a href="<?php echo site_url('Manager/logout'); ?>"><i class="fa fa-sign-out-alt"></i></a>
 						</div>
 					</div>
 				</div>
