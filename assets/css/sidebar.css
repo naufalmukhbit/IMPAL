@@ -32,16 +32,16 @@ a:hover {
 	color: #ffffff;
 	text-decoration: none;
 }
-li {
+li.side {
 	margin: auto;
 	padding-left: 1rem;
 	padding-top: .7rem;
 	padding-bottom: .7rem;
 }
-li:hover {
+li.side:hover {
 	background-color: #803b3b;
 }
-.active {
+.active.side {
 	background-color: #5d2b2b;
 }
 img {

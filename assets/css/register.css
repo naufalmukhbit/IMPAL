@@ -1,0 +1,56 @@
+body{
+	font-family: SF-UI-Display;
+	
+}
+.bg {
+	background-color: #de9a9f;
+	height: 60vh;
+}
+.container{
+	padding-top: 5%;
+	width: 50%;
+}
+.teks{
+	font-size: 50px;
+	font-weight: bold;
+	text-align: center;
+	padding: 10px;
+}
+.form-box{
+	background-color: #FFF;
+	border-radius: 4px;
+	box-shadow: 2px 2px 6px grey;
+	padding: 10px 40px 10px 40px;
+}
+.form-group input{
+	border-radius: 30px;
+}
+.form-group select{
+	border-radius: 30px;
+}
+.btn{
+	margin-top: 30px;
+	border-radius: 4px;
+	background-color: white;
+	border: solid 3px black;
+	color: black;
+	width: 50%;
+	text-align: center;
+	font-weight: bold;
+	border-radius: 60px;
+}
+.btn:hover:enabled {
+	color: black;
+	background-color: lightgrey;
+}
+footer {
+	text-align: center;
+	font-weight: bold;
+	text-decoration: underline;
+}
+.acc {
+	color: black;
+}
+.acc:hover {
+	color: grey;
+}
