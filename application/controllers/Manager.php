@@ -10,12 +10,22 @@ class Manager extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('sidebar_manager');
+		// $emp_id = $this->session->userdata('emp_id');
+		// $data = $this->Manager_model->get_name($emp_id);
+		// $data = array(
+		// 	'name' => $this->Manager_model->get_name($emp_id)
+		// );
+		$this->load->view('manager');
 	}
 
     public function manage_employee()
     {
-        $this->load->view('manage_employee');
+    	// $emp_id = $this->session->userdata('emp_id');
+    	// $data_temp = $this->Manager_model->get_data()
+		$data = array(
+            'data' => $this->Manager_model->get_data()
+        ); 
+        $this->load->view('manage_employee', $data);
     }
 
     public function logout()
