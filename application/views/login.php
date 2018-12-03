@@ -30,7 +30,7 @@
 						<button type="submit" class="btn btn-block mx-auto" id="signinButton">Login</button>
 					</div>
 					<footer class="mt-3">
-						<a class="acc" href="../register/register.html">Create Account</a>
+						<a class="acc" href="<?php echo site_url('Register/index'); ?>">Create Account</a>
 					</footer>
 				</div>
 			</form>

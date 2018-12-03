@@ -6,6 +6,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/sidebar.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/manage_employee.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/fonts.css">
 	<!-- Scrollbar Custom CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -116,8 +117,8 @@
 					<div class="row header-row">
 						<div class="col-10 header-col-10">
 							Welcome,<br>
-							<div class="emp-name">Your Name Here</div>
-							<div>1234567890</div>
+							<div class="emp-name"><?php echo $this->session->userdata('name'); ?></div>
+							<div><?php echo $this->session->userdata('emp_id'); ?></div>
 						</div>
 						<div class="col-2 pl-5 pr-0 my-auto">
 							<a href="#" class="mr-4"><i class="fa fa-cog"></i></a>
@@ -147,14 +148,15 @@
 											<label for="selectAll"></label>
 										</span>
 									</th>
+									<th>ID</th>
 			                        <th>Name</th>
 			                        <th>Email</th>
-									<th>Address</th>
-			                        <th>Phone</th>
+									<th>Position</th>
 			                        <th>Actions</th>
 			                    </tr>
 			                </thead>
 			                <tbody>
+			                <?php foreach ($data -> result() as  $value) { ?>
 			                    <tr>
 									<td>
 										<span class="custom-checkbox">
@@ -162,79 +164,16 @@
 											<label for="checkbox1"></label>
 										</span>
 									</td>
-			                        <td>Thomas Hardy</td>
-			                        <td>thomashardy@mail.com</td>
-									<td>Bandung</td>
-			                        <td>08112222</td>
+									<td><?php echo $value->emp_id ?></td>
+			                        <td><?php echo $value->name ?></td>
+			                        <td><?php echo $value->email?></td>
+									<td><?php echo $value->level ?></td>
 			                        <td>
 			                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
 			                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
 			                        </td>
 			                    </tr>
-			                    <tr>
-									<td>
-										<span class="custom-checkbox">
-											<input type="checkbox" id="checkbox2" name="options[]" value="1">
-											<label for="checkbox2"></label>
-										</span>
-									</td>
-			                        <td>Diana Wangso</td>
-			                        <td>Dianawangso@mail.com</td>
-									<td>Jakarta Selatan</td>
-			                        <td>0815555735</td>
-			                        <td>
-			                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-			                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-			                        </td>
-			                    </tr>
-								<tr>
-									<td>
-										<span class="custom-checkbox">
-											<input type="checkbox" id="checkbox3" name="options[]" value="1">
-											<label for="checkbox3"></label>
-										</span>
-									</td>
-			                        <td>Maria Jola</td>
-			                        <td>mariajola@mail.com</td>
-									<td>Bogor</td>
-			                        <td>0825559931</td>
-			                        <td>
-			                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-			                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-			                        </td>
-			                    </tr>
-			                    <tr>
-									<td>
-										<span class="custom-checkbox">
-											<input type="checkbox" id="checkbox4" name="options[]" value="1">
-											<label for="checkbox4"></label>
-										</span>
-									</td>
-			                        <td>Fran Wilson</td>
-			                        <td>franwilson@mail.com</td>
-									<td>Tangerang Selatan</td>
-			                        <td>0896195731</td>
-			                        <td>
-			                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-			                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-			                        </td>
-			                    </tr>					
-								<tr>
-									<td>
-										<span class="custom-checkbox">
-											<input type="checkbox" id="checkbox5" name="options[]" value="1">
-											<label for="checkbox5"></label>
-										</span>
-									</td>
-			                        <td>Martin</td>
-			                        <td>martin@mail.com</td>
-									<td>Tangerang Kota</td>
-			                        <td>0886312097</td>
-			                        <td>
-			                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-			                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-			                        </td>
-			                    </tr> 
+			                <?php } ?>
 			                </tbody>
 			            </table>
 						<div class="clearfix">

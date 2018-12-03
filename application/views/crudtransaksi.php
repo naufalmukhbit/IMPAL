@@ -283,9 +283,11 @@ $(document).ready(function(){
                         <th>ID Transaction</th>
                         <th>Type Transaction</th>
                         <th>Purchase Date</th>
-                        <th>Description<th>
-                        <th>Price<th>
-                        <th>Actions</th>
+                        <th>Customer Name</th>
+                        <th>Customer ID</th>
+                        <th>Unit Type</th>
+                        <th>Unit ID</th>	
+                        <th>Color</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -300,10 +302,11 @@ $(document).ready(function(){
                         <td><?php echo $value->idtransaction ?></td>
                         <td><?php echo $value->typetransaction?></td>
 						<td><?php echo $value->date ?></td>
-                        <td><?php echo $value->deskripsi ?></td>
-                        <td></td>
-                        <td><?php echo $value->price ?></td>
-                        <td></td>
+                        <td><?php echo $value->customername ?></td>
+                        <td><?php echo $value->ktp ?></td>
+                        <td><?php echo $value->unit_type ?></td>
+                        <td><?php echo $value->idcar ?></td>
+                        <td><?php echo $value->color ?></td>
                         <td>
                             <a href="#editTransactionModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                         </td>
