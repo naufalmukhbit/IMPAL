@@ -66,14 +66,8 @@
 						<li class="side">
 							<a href="<?php echo site_url('Cashier/index'); ?>">Home</a>
 						</li>
-						<li class="side">
-							<a href="#">New Transaction</a>
-						</li>
 						<li class="active side">
 							<a href="#">Transactions List</a>
-						</li>
-						<li class="side">
-							<a href="<?php echo site_url('Cashier/report'); ?>">Send Report</a>
 						</li>
 					</ul>
 				</nav>

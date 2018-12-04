@@ -5,10 +5,14 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/sidebar.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/manage_employee.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/fonts.css">
 	<!-- Scrollbar Custom CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 	<script type="text/javascript">
 		$(document).ready(function () {
 			$("#sidebar").mCustomScrollbar({
@@ -25,6 +29,28 @@
         		$('a[aria-expanded=true]').attr('aria-expanded', 'false');
         	});
 
+		    // Activate tooltip
+			$('[data-toggle="tooltip"]').tooltip();
+			
+			// Select/Deselect checkboxes
+			var checkbox = $('table tbody input[type="checkbox"]');
+			$("#selectAll").click(function(){
+				if(this.checked){
+					checkbox.each(function(){
+						this.checked = true;                        
+					});
+				} else{
+					checkbox.each(function(){
+						this.checked = false;                        
+					});
+				} 
+			});
+			checkbox.click(function(){
+				if(!this.checked){
+					$("#selectAll").prop("checked", false);
+				}
+			});
+
 		});
 	</script>
 </head>
@@ -38,14 +64,20 @@
 					</div>
 
 					<ul class="list-unstyled components">
-						<li class="active side">
-							<a href="#">Home</a>
+						<li class="side">
+							<a href="<?php echo site_url('Manager/index'); ?>">Home</a>
 						</li>
 						<li class="side">
-							<a href="#empSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Employees</a>
+							<a href="#empSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Employees</a>
 							<ul class="collapse list-unstyled" id="empSubmenu">
 								<li class="side">
-									<a href="<?php echo site_url('Manager/manage_employee'); ?>">Manage Employees</a>
+									<a href="#">Manage Employees</a>
+								</li>
+								<li class="side">
+									<a href="#">Opt 2</a>
+								</li>
+								<li class="side">
+									<a href="#">Opt 3</a>
 								</li>
 							</ul>
 						</li>
@@ -58,10 +90,10 @@
 								<li class="side">
 									<a href="<?php echo site_url('Manager/order'); ?>">Order List</a>
 								</li>
-								<li class="side">
+								<li class="active side">
 									<a href="<?php echo site_url('Manager/transaction'); ?>">Transaction List</a>
 								</li>
-								<li class="side">
+								<li class="actiive side">
 									<a href="<?php echo site_url('Manager/stock'); ?>">Stock List</a>
 								</li>
 							</ul>
@@ -98,52 +130,74 @@
 					</div>
 				</div>
 				<div class="container">
-					<!-- <h3>New Request</h3>
-					<div class="row">
-						<div class="col-md-6">
-							<div class="form-box">
-								<div class="form-group">
-									<p>Date</p>
-									<input type="date" style="width: 100%; border-radius: 30px; height: 30px;">
-								</div>
-								<div class="form-group">
-									<p>Supplier</p>
-									<select style="width: 100%; border-radius: 30px;">
-										<option>-Supplier-</option>
-										<option>A</option>
-										<option>B</option>
-										<option>C</option>
-									</select>
-								</div>
-								<div class="form-group">
-									<p>Description</p>
-									<input type="text" class="form-control" style="width: 100%; border-radius: 30px; height: 100px;">
-								</div>
-								<div class="text-center daftar">
-									<button type="submit" class="btn btn-block" id="requestpButton">Send Request</button>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="form-box">
-								<div class="form-group" style="width: 48%; display: inline-block; margin-right: 1rem;">
-									<p>Unit</p>
-									<select style="width: 100%; border-radius: 30px;">
-										<option>-Unit-</option>
-										<option>aaaa</option>
-										<option>bbbb</option>
-										<option>cccc</option>
-									</select>
-								</div>
-								<div class="form-group" style="width: 48%; display: inline-block;">
-									<p>Amount</p>
-									<input type="text" class="form-control" style="width: 100%; border-radius: 30px;">
-								</div>
-								<a class="acc" href="../login/login.html">+ Add another unit</a>
-							</footer>
-						</div>
-					</div> -->
-				</div>
+        <div class="table-wrapper">
+            <div class="table-title" style="background-color: white">
+                <div class="row" style="background-color: white">
+                    <div class="col-sm-6">
+						<h2 style="color: black">List <b style="color: black">Transaction</b></h2>
+					</div>
+					<div class="col-sm-6">
+												
+					</div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+						<th>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="selectAll">
+								<label for="selectAll"></label>
+							</span>
+						</th>
+                        <th>ID Transaction</th>
+                        <th>Type Transaction</th>
+                        <th>Purchase Date</th>
+                        <th>Customer Name</th>
+                        <th>Customer ID</th>
+                        <th>Unit Type</th>
+                        <th>Unit ID</th>	
+                        <th>Color</th>
+                    </tr>
+                </thead>
+                <tbody>
+				<?php foreach ($data -> result() as  $value) { ?>
+                    <tr>
+						<td>
+							<span class="custom-checkbox">
+								<input type="checkbox" id="checkbox1" name="options[]" value="1">
+								<label for="checkbox1"></label>
+							</span>
+						</td>
+                        <td><?php echo $value->idtransaction ?></td>
+                        <td><?php echo $value->typetransaction?></td>
+						<td><?php echo $value->date ?></td>
+                        <td><?php echo $value->customername ?></td>
+                        <td><?php echo $value->ktp ?></td>
+                        <td><?php echo $value->unit_type ?></td>
+                        <td><?php echo $value->idcar ?></td>
+                        <td><?php echo $value->color ?></td>
+                        <td>
+                            
+                        </td>
+					</tr> 
+					<?php } ?>
+                </tbody>
+            </table>
+			<div class="clearfix">
+                <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+                <ul class="pagination">
+                    <li class="page-item disabled"><a href="#">Previous</a></li>
+                    <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                    <li class="page-item"><a href="#" class="page-link">2</a></li>
+                    <li class="page-item"><a href="#" class="page-link">3</a></li>
+                    <li class="page-item"><a href="#" class="page-link">4</a></li>
+                    <li class="page-item"><a href="#" class="page-link">5</a></li>
+                    <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 			</div>
 		</div>
 	</div>

@@ -68,10 +68,16 @@
 							<a href="<?php echo site_url('Manager/index'); ?>">Home</a>
 						</li>
 						<li class="side">
-							<a href="#empSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Employees</a>
-							<ul class="collapse show list-unstyled" id="empSubmenu">
-								<li class="active side">
-									<a href="<?php echo site_url('Manager/manage_employee'); ?>">Manage Employees</a>
+							<a href="#empSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Employees</a>
+							<ul class="collapse list-unstyled" id="empSubmenu">
+								<li class="side">
+									<a href="#">Manage Employees</a>
+								</li>
+								<li class="side">
+									<a href="#">Opt 2</a>
+								</li>
+								<li class="side">
+									<a href="#">Opt 3</a>
 								</li>
 							</ul>
 						</li>
@@ -81,11 +87,14 @@
 								<li class="side">
 									<a href="<?php echo site_url('Manager/purchase'); ?>">Purchase List</a>
 								</li>
-								<li class="side">
+								<li class="active side">
 									<a href="<?php echo site_url('Manager/order'); ?>">Order List</a>
 								</li>
 								<li class="side">
 									<a href="<?php echo site_url('Manager/transaction'); ?>">Transaction List</a>
+								</li>
+								<li class="side">
+									<a href="<?php echo site_url('Manager/stock'); ?>">Stock List</a>
 								</li>
 							</ul>
 						</li>
@@ -121,15 +130,15 @@
 					</div>
 				</div>
 				<div class="container">
-					<div class="table-wrapper">
+			        <div class="table-wrapper">
 			            <div class="table-title" style="background-color: white">
 			                <div class="row" style="background-color: white">
 			                    <div class="col-sm-6">
-									<h2 style="color: black">Manage <b style="color: black">Employees</b></h2>
+									<h2 style="color: black">Manage <b style="color: black">Order</b></h2>
 								</div>
 								<div class="col-sm-6">
-									<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Employee</span></a>
-									<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>						
+									<a href="#addOrderModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Order</span></a>
+														
 								</div>
 			                </div>
 			            </div>
@@ -142,15 +151,17 @@
 											<label for="selectAll"></label>
 										</span>
 									</th>
-									<th>ID</th>
-			                        <th>Name</th>
-			                        <th>Email</th>
-									<th>Position</th>
+			                        <th>ID Order</th>
+			                        <th>Order Date</th>
+									<th>Customer Name</th>
+			                        <th>KTP</th>
+			                        <th>Unit Type<th>
+			                        <th>Color<th>
 			                        <th>Actions</th>
 			                    </tr>
 			                </thead>
 			                <tbody>
-			                <?php foreach ($data -> result() as  $value) { ?>
+							<?php foreach ($data -> result() as  $value) { ?>
 			                    <tr>
 									<td>
 										<span class="custom-checkbox">
@@ -158,127 +169,38 @@
 											<label for="checkbox1"></label>
 										</span>
 									</td>
-									<td><?php echo $value->emp_id ?></td>
-			                        <td><?php echo $value->name ?></td>
-			                        <td><?php echo $value->email?></td>
-									<td><?php echo $value->level ?></td>
+			                        <td><?php echo $value->id_order ?></td>
+									<td><?php echo $value->order_date ?></td>
+			                        <td><?php echo $value->custname ?></td>
+			                        <td><?php echo $value->custid ?></td>
+			                        <td><?php echo $value->unit ?></td>
+			                        <td></td>
+			                        <td><?php echo $value->color ?></td>
+			                        
+			                        <td></td>
 			                        <td>
-			                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-			                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+			                            <a href="#editOrderModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+			                            
 			                        </td>
-			                    </tr>
-			                <?php } ?>
+
+								</tr> 
+								<?php } ?>
 			                </tbody>
 			            </table>
 						<div class="clearfix">
 			                <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
 			                <ul class="pagination">
 			                    <li class="page-item disabled"><a href="#">Previous</a></li>
-			                    <li class="page-item"><a href="#" class="page-link">1</a></li>
+			                    <li class="page-item active"><a href="#" class="page-link">1</a></li>
 			                    <li class="page-item"><a href="#" class="page-link">2</a></li>
-			                    <li class="page-item active"><a href="#" class="page-link">3</a></li>
+			                    <li class="page-item"><a href="#" class="page-link">3</a></li>
 			                    <li class="page-item"><a href="#" class="page-link">4</a></li>
 			                    <li class="page-item"><a href="#" class="page-link">5</a></li>
 			                    <li class="page-item"><a href="#" class="page-link">Next</a></li>
 			                </ul>
 			            </div>
 			        </div>
-				</div>
-				<!-- Edit Modal HTML -->
-				<div id="addEmployeeModal" class="modal fade">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<form>
-								<div class="modal-header">						
-									<h4 class="modal-title">Add Employee</h4>
-									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-								</div>
-								<div class="modal-body">	
-									<div class="form-group">
-										<label>ID</label>
-										<input type="text" class="form-control" required>
-									</div>				
-									<div class="form-group">
-										<label>Name</label>
-										<input type="text" class="form-control" required>
-									</div>
-									<div class="form-group">
-										<label>Email</label>
-										<input type="email" class="form-control" required>
-									</div>
-									<div class="form-group">
-										<label>Address</label>
-										<textarea class="form-control" required></textarea>
-									</div>
-									<div class="form-group">
-										<label>Phone</label>
-										<input type="text" class="form-control" required>
-									</div>					
-								</div>
-								<div class="modal-footer">
-									<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-									<input type="submit" class="btn btn-success" value="Add">
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-				<!-- Edit Modal HTML -->
-				<div id="editEmployeeModal" class="modal fade">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<form>
-								<div class="modal-header">						
-									<h4 class="modal-title">Edit Employee</h4>
-									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-								</div>
-								<div class="modal-body">					
-									<div class="form-group">
-										<label>Name</label>
-										<input type="text" class="form-control" required>
-									</div>
-									<div class="form-group">
-										<label>Email</label>
-										<input type="email" class="form-control" required>
-									</div>
-									<div class="form-group">
-										<label>Address</label>
-										<textarea class="form-control" required></textarea>
-									</div>
-									<div class="form-group">
-										<label>Phone</label>
-										<input type="text" class="form-control" required>
-									</div>					
-								</div>
-								<div class="modal-footer">
-									<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-									<input type="submit" class="btn btn-info" value="Save">
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-				<!-- Delete Modal HTML -->
-				<div id="deleteEmployeeModal" class="modal fade">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<form>
-								<div class="modal-header">						
-									<h4 class="modal-title">Delete Employee</h4>
-									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-								</div>
-								<div class="modal-body">					
-									<p>Are you sure you want to delete these Records?</p>
-									<p class="text-warning"><small>This action cannot be undone.</small></p>
-								</div>
-								<div class="modal-footer">
-									<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-									<input type="submit" class="btn btn-danger" value="Delete">
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
+			    </div>
 			</div>
 		</div>
 	</div>

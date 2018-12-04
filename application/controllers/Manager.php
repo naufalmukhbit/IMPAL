@@ -33,4 +33,41 @@ class Manager extends CI_Controller {
         $this->session->sess_destroy();
         redirect('Welcome/index');
     }
+
+    public function purchase()
+    {
+    	// $emp_id = $this->session->userdata('emp_id');
+    	// $data_temp = $this->Manager_model->get_data()
+		$data = array(
+            'data' => $this->Manager_model->get_purchase_data()
+        ); 
+        $this->load->view('purchase_list', $data);
+    }
+    public function order()
+    {
+    	// $emp_id = $this->session->userdata('emp_id');
+    	// $data_temp = $this->Manager_model->get_data()
+		$data = array(
+            'data' => $this->Manager_model->get_order_data()
+        ); 
+        $this->load->view('order_list', $data);
+    }
+    public function transaction()
+    {
+    	// $emp_id = $this->session->userdata('emp_id');
+    	// $data_temp = $this->Manager_model->get_data()
+		$data = array(
+            'data' => $this->Manager_model->get_transaction_data()
+        ); 
+        $this->load->view('transaction_list', $data);
+    }
+    public function stock()
+    {
+    	// $emp_id = $this->session->userdata('emp_id');
+    	// $data_temp = $this->Manager_model->get_data()
+		$data = array(
+            'data' => $this->Manager_model->get_stock_data()
+        ); 
+        $this->load->view('stock_list', $data);
+    }
 }

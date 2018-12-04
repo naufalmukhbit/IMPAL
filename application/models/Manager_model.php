@@ -20,5 +20,35 @@ class Manager_model extends CI_Model {
         $query = $this->db->get();
         return $query;
     }
+
+    public function get_purchase_data()
+    {
+        $this->db->select('*');
+        $this->db->from('purchase');
+        $query = $this->db->get();
+        return $query;
+    }
+
+    public function get_order_data()
+    {
+        $this->db->select('*');
+        $this->db->from('pemesanan');
+        $query = $this->db->get();
+        return $query;
+    }
+    public function get_transaction_data()
+    {
+        $this->db->select('*');
+        $this->db->from('transaction');
+        $query = $this->db->get();
+        return $query;
+    }
+    public function get_stock_data()
+    {
+        $this->db->select('*');
+        $this->db->from('stock');
+        $query = $this->db->get();
+        return $query;
+    }
 }
 ?>
