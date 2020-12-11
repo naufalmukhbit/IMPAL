@@ -29,3 +29,9 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 *.sublime-project
 /tests/tests/
 /tests/results/
+
+# Document files
+5b._Template_SKPL_Analisis_Berorientasi_Objek.docx
+469005_DPPL.docx
+DUPL KELOMPOK 5.doc
+User Manual KELOMPOK 5.docx
